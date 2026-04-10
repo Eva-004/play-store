@@ -8,6 +8,7 @@ import HomePage from './pages/homePage/HomePage'
 import Apps from './pages/apps/Apps'
 import Installation from './pages/installation/Installation'
 import NotFoundPage from './pages/notFoundPage/NotFoundPage'
+import AppDetails from './pages/appDetails/AppDetails'
 
 const router = createBrowserRouter([{
     path:"/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([{
       {
         path: "/installation",
         Component: Installation
+      },
+      {
+        path: '/app/:id',
+        Component: AppDetails
       }
     ],
     errorElement:<NotFoundPage></NotFoundPage>
