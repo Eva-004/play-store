@@ -5,7 +5,7 @@ import hero from '../../assets/images/hero.png'
 
 const Banner = () => {
     return (
-       <div className='min-h-screen bg-base-200'>
+       <div className='min-h-screen '>
          <div className='container mx-auto'>
             <div className='pt-20 pb-10'>
                 <div className='text-center space-y-4'>
