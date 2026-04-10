@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     
                 </div>
-               <hr className='text-white' />
+               <div className="divider w-full text-white mx-auto"></div>
                <div className='mx-auto'>Copyright &copy; 2025 - All right reserved</div>
             </footer>
         </div>

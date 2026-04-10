@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import logo from '../../assets/images/logo.png'
 import { FaGithub } from 'react-icons/fa';
+import MyNavLink from './MyNavLink';
 
 const NavBar = () => {
     const links = <>
-    <li><Link to='/'>Home</Link></li>
-    <li><Link to='/app'>Apps</Link></li>
-    <li><Link to='/installation'>Installation</Link></li>
+    <li><MyNavLink to='/'>Home</MyNavLink></li>
+    <li><MyNavLink to='/app'>Apps</MyNavLink></li>
+    <li><MyNavLink to='/installation'>Installation</MyNavLink></li>
     </>
     return (
         <nav className=' bg-base-100 shadow-sm'>
@@ -29,7 +30,7 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 gap-2">
                      {links}
                 </ul>
             </div>

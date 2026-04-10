@@ -7,6 +7,7 @@ import RootLayout from './Layout/RootLayout'
 import HomePage from './pages/homePage/HomePage'
 import Apps from './pages/apps/Apps'
 import Installation from './pages/installation/Installation'
+import NotFoundPage from './pages/notFoundPage/NotFoundPage'
 
 const router = createBrowserRouter([{
     path:"/",
@@ -25,11 +26,11 @@ const router = createBrowserRouter([{
         Component: Installation
       }
     ],
-    errorElement: <h2>This page is not found</h2>
+    errorElement:<NotFoundPage></NotFoundPage>
 }])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <RouterProvider router={router} />,
+  <RouterProvider router={router} />
   </StrictMode>,
 )

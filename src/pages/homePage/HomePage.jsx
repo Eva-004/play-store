@@ -1,9 +1,12 @@
 import React from 'react';
+import Banner from '../../Components/homePages/Banner';
+import Stats from '../../Components/homePages/Stats';
 
 const HomePage = () => {
     return (
-        <div>
-            home page
+        <div className=''>
+            <Banner></Banner>
+            <Stats></Stats>
         </div>
     );
 };
