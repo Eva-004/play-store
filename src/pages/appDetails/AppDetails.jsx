@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import useApps from '../../hocks/useApps';
 import { HashLoader } from 'react-spinners';
 import { FaDownload, FaStar, FaThumbsUp } from 'react-icons/fa';
+import RatingChart from '../../RatingChart/RatingChart';
 
 const AppDetails = () => {
     const {apps , loading} = useApps();
@@ -45,7 +46,7 @@ const AppDetails = () => {
                   
                  </div>
                  <div className="divider mt-10"></div>
-                 
+                  <RatingChart app={expectedApp}></RatingChart>
                 </div>
              }
             
