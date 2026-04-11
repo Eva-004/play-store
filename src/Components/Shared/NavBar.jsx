@@ -9,6 +9,7 @@ const NavBar = () => {
     <li><MyNavLink to='/'>Home</MyNavLink></li>
     <li><MyNavLink to='/app'>Apps</MyNavLink></li>
     <li><MyNavLink to='/installation'>Installation</MyNavLink></li>
+    <li><MyNavLink to='/dashboard'>DashBoard</MyNavLink></li>
     </>
     return (
         <nav className=' bg-base-100 shadow-sm'>

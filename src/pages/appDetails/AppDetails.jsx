@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import { useParams } from 'react-router';
 import useApps from '../../hocks/useApps';
 import { HashLoader } from 'react-spinners';
 import { FaDownload, FaStar, FaThumbsUp } from 'react-icons/fa';
 import RatingChart from '../../RatingChart/RatingChart';
+import { InstalledAppContext } from '../../Components/context/InstallAppsProvider';
 
 const AppDetails = () => {
     const {apps , loading} = useApps();
     const {id} = useParams();
     const expectedApp = apps.find(item => item.id === Number(id))
-    console.log(expectedApp)
+    // console.log(expectedApp)
+   const {setInstalledApps,installedApps} = useContext(InstalledAppContext)
+  
+   const handleInstall =()=>{
+    setInstalledApps([...installedApps,expectedApp])
+     
+   }
+
     return (
         <div className='bg-base-200 py-20'>
             <div className='container mx-auto'>
@@ -41,12 +49,17 @@ const AppDetails = () => {
                         <h3 className='text-[#001931] text-xl font-bold'>{expectedApp.reviews}</h3>
                     </div>
                    </div>
-                   <button className='btn bg-[#00D390] text-white mt-7'>Install Now ({expectedApp.size} MB)</button>
+                   <button onClick={handleInstall}  className={`btn bg-[#00D390] text-white  mt-7` }>Install Now ({expectedApp.size} MB)</button>
                   </div>
                   
                  </div>
                  <div className="divider mt-10"></div>
                   <RatingChart app={expectedApp}></RatingChart>
+                  <div className="divider mt-10"></div>
+                  <div className='space-y-4'>
+                    <h3 className='text-[#001931] font-bold'>Description</h3>
+                    <p className='text-[#627382]'>{expectedApp.description}</p>
+                  </div>
                 </div>
              }
             

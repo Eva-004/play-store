@@ -9,6 +9,9 @@ import Apps from './pages/apps/Apps'
 import Installation from './pages/installation/Installation'
 import NotFoundPage from './pages/notFoundPage/NotFoundPage'
 import AppDetails from './pages/appDetails/AppDetails'
+import InstallAppsProvider from './Components/context/InstallAppsProvider'
+import { ToastContainer } from 'react-toastify'
+import DashBoard from './pages/dashboard/DashBoard'
 
 const router = createBrowserRouter([{
     path:"/",
@@ -29,13 +32,20 @@ const router = createBrowserRouter([{
       {
         path: '/app/:id',
         Component: AppDetails
+      },
+      {
+        path: '/dashboard',
+        Component: DashBoard
       }
     ],
     errorElement:<NotFoundPage></NotFoundPage>
 }])
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <InstallAppsProvider>
+    <StrictMode>
   <RouterProvider router={router} />
-  </StrictMode>,
+   <ToastContainer />
+  </StrictMode>
+  </InstallAppsProvider>
 )
