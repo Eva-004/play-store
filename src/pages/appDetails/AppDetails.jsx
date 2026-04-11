@@ -1,10 +1,11 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState} from 'react';
 import { useParams } from 'react-router';
 import useApps from '../../hocks/useApps';
 import { HashLoader } from 'react-spinners';
 import { FaDownload, FaStar, FaThumbsUp } from 'react-icons/fa';
 import RatingChart from '../../RatingChart/RatingChart';
 import { InstalledAppContext } from '../../Components/context/InstallAppsProvider';
+import { toast } from 'react-toastify';
 
 const AppDetails = () => {
     const {apps , loading} = useApps();
@@ -12,10 +13,18 @@ const AppDetails = () => {
     const expectedApp = apps.find(item => item.id === Number(id))
     // console.log(expectedApp)
    const {setInstalledApps,installedApps} = useContext(InstalledAppContext)
-  
+  const [isInstall,setIsInstall] = useState(false)
+
    const handleInstall =()=>{
+    const alreadyExists = installedApps.find(app => app.id === expectedApp.id);
+    if(alreadyExists){
+        toast.error(`${expectedApp.title} already installed`)
+        setIsInstall(true)
+        return;
+    }
     setInstalledApps([...installedApps,expectedApp])
-     
+     setIsInstall(true)
+     toast.success(`${expectedApp.title} installed successfully`)
    }
 
     return (
@@ -49,7 +58,7 @@ const AppDetails = () => {
                         <h3 className='text-[#001931] text-xl font-bold'>{expectedApp.reviews}</h3>
                     </div>
                    </div>
-                   <button onClick={handleInstall}  className={`btn bg-[#00D390] text-white  mt-7` }>Install Now ({expectedApp.size} MB)</button>
+                   <button onClick={handleInstall} disabled={isInstall}  className={`btn ${isInstall ? 'bg-gray-400 text-white' : 'bg-[#00D390] text-white'}    mt-7 font-bold` }>Install Now ({expectedApp.size} MB)</button>
                   </div>
                   
                  </div>
