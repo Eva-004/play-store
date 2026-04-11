@@ -6,7 +6,7 @@ import hero from '../../assets/images/hero.png'
 const Banner = () => {
     return (
        <div className='min-h-screen '>
-         <div className='container mx-auto'>
+         <div className='w-11/12 mx-auto'>
             <div className='pt-20 pb-10'>
                 <div className='text-center space-y-4'>
                     <h2 className='font-bold text-5xl text-[#001931]'>We Build<br/> <span className='bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent'>Productive</span> Apps</h2>

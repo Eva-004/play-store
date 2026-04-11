@@ -7,7 +7,7 @@ const Apps = () => {
      const {apps,loading} = useApps();
     return (
         <div className=' py-20 bg-base-200'>
-            <div className='container mx-auto space-y-8'>
+            <div className='w-11/12 mx-auto space-y-8'>
                 <div className='text-center space-y-4'>
                     <h2 className='font-bold text-3xl text-[#001931]'>Our All Applications</h2>
                     <p className='text-[#627382]'>Explore All Apps on the Market developed by us. We code for Millions</p>

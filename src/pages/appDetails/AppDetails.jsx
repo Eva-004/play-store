@@ -29,7 +29,7 @@ const AppDetails = () => {
 
     return (
         <div className='bg-base-200 py-20'>
-            <div className='container mx-auto'>
+            <div className='w-11/12 mx-auto'>
              {
                 loading ? <div className='flex justify-center items-center'><HashLoader color='#9F62F2' /></div> : 
                 <div>

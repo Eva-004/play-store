@@ -14,7 +14,7 @@ const DashBoard = ({ isAnimationActive = true }) => {
     ]
     return (
         <div className='min-h-[screen] bg-base-200'>
-            <div className='container mx-auto py-12 space-y-4'>
+            <div className='w-11/12 mx-auto py-12 space-y-4'>
                 <h2 className='font-bold text-2xl text-center text-[#001931]'>Installed App Char</h2>
                 {
                     loading ? <div className='flex justify-center items-center'><HashLoader color='#9F62F2' /></div> :

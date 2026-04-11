@@ -8,7 +8,7 @@ const TrendingApps = () => {
     const {apps,loading} = useApps();
    
     return (
-        <div className='container mx-auto py-20'>
+        <div className='w-11/12mx-auto py-20'>
             <div className='text-center space-y-2 pb-10'>
                 <h2 className='font-bold text-3xl text-[#001931]'>Trending Apps</h2>
                 <p className='text-[#627382]'>Explore All Trending Apps on the Market developed by us</p>

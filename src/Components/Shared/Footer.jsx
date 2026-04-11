@@ -5,7 +5,7 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='footer sm:footer-horizontal bg-neutral text-neutral-content  py-4 '>
-            <footer className="mx-auto container items-center">
+            <footer className="  w-11/12 mx-auto  items-center">
                 <div className='flex justify-between items-center gap-200'>
                     <div className='flex items-center gap-1'>
                         <img src={logo} alt="footer logo" className='h-10' />
